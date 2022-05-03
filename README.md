@@ -1,6 +1,6 @@
 # Adapter Therefore
 
-_Adapter Therefore_ est un microservice qui permet de transformer le JSON produit par Therefore en un JSON plus lisible pour l'application [Contract Details for Jira Cloud](https://bitbucket.org/dakatec/app-jira-contract-details/).
+_Adapter Therefore_ est un microservice qui permet de transformer le JSON produit par Therefore en un JSON plus lisible pour l'application [Contract Details for Jira Cloud](https://bitbucket.org/dakatec/app-jira-contract-details/) et [Contract Details for Jira Cloud](https://bitbucket.org/dakatec/app-jira-contract-status/).
 
 #### Exemple de JSON en sortie
 ```json
