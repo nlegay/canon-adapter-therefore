@@ -1,6 +1,6 @@
-FROM node:lts-alpine3.15
+FROM node:alpine3.15
 
-WORKDIR /usr/src/app
+WORKDIR /app/adapter-therefore/
 
 COPY package*.json ./
 
@@ -8,5 +8,6 @@ RUN npm ci --only=production
 
 COPY . .
 
-EXPOSE 42
+VOLUME /app/adapter-therefore/logs
+
 CMD [ "node", "server.js" ]
