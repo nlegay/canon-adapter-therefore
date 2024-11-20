@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adapter-therefore
+spec:
+  selector:
+    matchLabels:
+      app: adapter-therefore
+  template:
+    metadata:
+      labels:
+        app: adapter-therefore
+    spec:
+      containers:
+      - name: adapter-therefore
+        image: 147065063210.dkr.ecr.eu-west-3.amazonaws.com/adapter-therefore:1.2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+  replicas: 2

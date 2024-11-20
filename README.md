@@ -51,7 +51,7 @@ Création de l'image Docker + lancement :
 
 ```shell
 docker build -t node-adapter-therefore:latest .
-docker run -d -p 42:42 --env-file ./.env 147065063210.dkr.ecr.eu-west-3.amazonaws.com/adapter-therefore:latest
+docker run -d -v $(pwd)/logs:/app/adapter-therefore/logs -p 42:42 --env-file ./.env 147065063210.dkr.ecr.eu-west-3.amazonaws.com/adapter-therefore:1.2
 ```
 
 ## Licence
