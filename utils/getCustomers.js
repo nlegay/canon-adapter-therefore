@@ -17,16 +17,13 @@ async function sendRequest(name) {
     },
   };
 
-  console.log("body: " + JSON.stringify(body));
-
   var options = {
     method: "post",
     headers: {
       Authorization:
         "Basic " +
         Buffer.from(
-          `${process.env.USER}:${process.env.PASSWORD}`,
-          "binary"
+          `${process.env.WS_USER}:${process.env.WS_PASSWORD}`
         ).toString("base64"),
       "Content-Type": "application/json",
       TenantName: "CFR-BIS",
@@ -35,11 +32,10 @@ async function sendRequest(name) {
   };
   try {
     const response = await fetch(process.env.URL_BDD, options);
-    console.log(response);
     logger.info("getCustomersByName - Status Code: " + response.status);
 
     const resp = await response.json();
-    const customers = resp.QueryResult.ResultRows.map(
+    const customers = resp.QueryResult?.ResultRows?.map(
       (contrat) => contrat.IndexValues[0]
     );
 
